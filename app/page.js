@@ -40,7 +40,7 @@ const Page = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold text-white">Made for the most beginners and for the most experts.</h1>
+            <h1 className="mb-5 text-5xl font-bold text-white">Made for the most beginners and for the most experts teams.</h1>
             <p className="mb-5">Our objective is to standardize the use of a single scouting tool to have an ease during the Regionals, Districts, Off-season events and the Championship.</p>
             <button className="btn btn-primary">Get Started</button>
           </div>
