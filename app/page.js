@@ -22,7 +22,7 @@ const Page = () => {
             <p className="ml-2 text-3xl">Powered with Open<span className="text-green-500">AI</span></p>
         </div>
 
-      <button className="btn btn-primary">Get Started</button>
+      
     </div>
   </div>
 </div>
