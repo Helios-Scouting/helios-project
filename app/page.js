@@ -1,11 +1,17 @@
 import React from 'react';
 import MainPage from './pages/mainPage';
+import { AuthContextProvider } from './context/AuthContext';
+
 
 const HomePage = () => {
   return (
-    <div>
-      <MainPage />
-    </div>
+    <AuthContextProvider>
+      <div>
+          <MainPage />
+      </div>
+  </AuthContextProvider>
+    
+    
   );
 };
 
