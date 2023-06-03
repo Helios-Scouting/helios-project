@@ -1,34 +1,16 @@
 'use client'
 
-import React from 'react'
-
-import {userAuth} from '../context/AuthContext'
-import GoogleButton from './googleButton'
-import CoolButton from './logoutButton'
-import { LuLogOut } from 'react-icons/fa';
-
+import React from 'react';
+import { userAuth } from '../context/AuthContext';
+import GoogleButton from './googleButton';
+import CoolButton from './logoutButton';
+import {BrowserRouter} from 'react-router-dom';
 
 const NavBar = () => {
-  const {user, logOut} = userAuth()
-  const {googleSignIn} = userAuth()
-
-  const handleSignOut = async () => {
-    try {
-      await logOut()
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  
-  const handleGoogleSignIn = async () => { 
-    try {
-      await googleSignIn()
-    } catch (error) {
-      console.log(error)
-    }
-  };
+  const {user} = userAuth();
 
     return (
+      <BrowserRouter>
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown">
@@ -72,12 +54,13 @@ const NavBar = () => {
         
         <div className="navbar-end">
             {user?.displayName ? (
-              <CoolButton onClick={handleSignOut} />
+              <CoolButton/>
             ) : (
-              <GoogleButton onClick={handleGoogleSignIn} />
+              <GoogleButton/>
             )}
         </div>
       </div>
+      </BrowserRouter>
     )
 }
 

@@ -1,18 +1,18 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
+import React from "react";
+import NavBarUser from "../components/NavBarAccount";
+import {AuthContextProvider} from "../context/AuthContext";
 
+const Dashboard = () => {
 
-function Dashboard() {
     return(
-        
+        <AuthContextProvider>
         <div>
-            <h1>Dashboard</h1>
-            
+            <NavBarUser/>
         </div>
-
-
+        </AuthContextProvider>
 
     );
+
 }
 
 export default Dashboard;
