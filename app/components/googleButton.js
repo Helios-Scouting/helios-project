@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaGoogle } from 'react-icons/fa';
 
+
+
 const GoogleButton = ({ onClick }) => {
   return (
     <button
@@ -14,3 +16,5 @@ const GoogleButton = ({ onClick }) => {
 };
 
 export default GoogleButton;
+
+

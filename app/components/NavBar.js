@@ -1,11 +1,24 @@
 'use client'
 
 import React from 'react'
+
 import {userAuth} from '../context/AuthContext'
 import GoogleButton from './googleButton'
+import CoolButton from './logoutButton'
+import { LuLogOut } from 'react-icons/fa';
+
 
 const NavBar = () => {
+  const {user, logOut} = userAuth()
   const {googleSignIn} = userAuth()
+
+  const handleSignOut = async () => {
+    try {
+      await logOut()
+    } catch (error) {
+      console.log(error)
+    }
+  }
   
   const handleGoogleSignIn = async () => { 
     try {
@@ -58,7 +71,11 @@ const NavBar = () => {
         </div>
         
         <div className="navbar-end">
-          <GoogleButton onClick={googleSignIn}/>
+            {user?.displayName ? (
+              <CoolButton onClick={handleSignOut} />
+            ) : (
+              <GoogleButton onClick={handleGoogleSignIn} />
+            )}
         </div>
       </div>
     )
