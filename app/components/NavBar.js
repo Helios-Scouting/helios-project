@@ -3,7 +3,7 @@
 import React from 'react';
 import { userAuth } from '../context/AuthContext';
 import GoogleButton from './googleButton';
-import CoolButton from './logoutButton';
+import RegisterButton from './register';
 import {BrowserRouter} from 'react-router-dom';
 
 const NavBar = () => {
@@ -53,11 +53,8 @@ const NavBar = () => {
         </div>
         
         <div className="navbar-end">
-            {user?.displayName ? (
-              <CoolButton/>
-            ) : (
-              <GoogleButton/>
-            )}
+            <RegisterButton />
+            <GoogleButton />
         </div>
       </div>
       </BrowserRouter>
